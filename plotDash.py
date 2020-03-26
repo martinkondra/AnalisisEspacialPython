@@ -61,7 +61,7 @@ app.layout = html.Div([
                 {'label': 'Hashtags', 'value': 'hashtags'},
                 {'label': 'Menciones', 'value': 'menciones'},
                 {'label': 'Idiomas', 'value': 'languages'}],
-            value='hashtags',
+            value='menciones',
             searchable=False,
             clearable=False
         ),
@@ -78,7 +78,7 @@ def update_map(n, mapType):
     df = df[-df['location'].isnull()]
     df['wrapped'] = df['text'].str.wrap(36).str.replace('\\n','<br>')
     layout = go.Layout(
-            width=790,
+            width=656,
             #height=1500,
             margin=dict(
                 l=10,
@@ -133,10 +133,10 @@ def update_barplot(n, frecType):
                   orientation='h',
                   )
     layout = go.Layout(
-                #width=500,
+                #width=300,
                 #height=500,
                 margin=dict(
-                    l=10,
+                    l=100,
                     r=10,
                     b=10,
                     t=10,
