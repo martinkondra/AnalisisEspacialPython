@@ -26,7 +26,7 @@ app.layout = html.Div([
     dcc.Input(id='input-box', 
               type='text',
               placeholder='Ingresá los términos a buscar, separados por comas',
-              style={'width':650}),
+              style={'width':'105vh'}),
     html.Button('Search', id='button'),
     ], className="eight columns"),
 
@@ -52,7 +52,9 @@ app.layout = html.Div([
             clearable=False
         ),
         dcc.Graph(id='live-update-map', ),
-    ], className="eight columns"),
+    ], className="eight columns",
+       style={'width':'125vh'}),
+
     html.Div([
         html.H6('Frecuencias:'),
         dcc.Dropdown(
@@ -66,7 +68,8 @@ app.layout = html.Div([
             clearable=False
         ),
         dcc.Graph(id='live-update-barplot')
-    ], className="three columns"),   
+    ], className="three columns",
+       style={'width':'45vh'}),   
 ])
 
 # Multiple components can update everytime interval gets fired.
@@ -78,7 +81,7 @@ def update_map(n, mapType):
     df = df[-df['location'].isnull()]
     df['wrapped'] = df['text'].str.wrap(36).str.replace('\\n','<br>')
     layout = go.Layout(
-            width=656,
+            #width=656,
             #height=1500,
             margin=dict(
                 l=10,
