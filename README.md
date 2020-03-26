@@ -25,6 +25,7 @@ $ python3 plotDash.py
 
 ### Pendientes
 - Mejorar performance
+- Buscar un algoritmo de georeferenciación que tenga mejor accuracy
 - Permitir la comparación de dos queries, mostrarlas con diferentes colores en el scatter map
 
 ### LICENCIA
